@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container-fluid px-0 mb-1 row">
+
+    <div class = "col-8 col-lg-3 border border-dark p-0 mx-2">
+    {% for book in response %}
+    
+        <img class = "img-fluid" src = "{{ book.image }}"  alt="Image">
+        <div class="h4 text-center p-0">{{ book.title }}</div>
+    
+    {% endfor %}
+    </div>
+
+</main>
+{% endblock %}

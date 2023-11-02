@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+<section class="text-center">
+    <div class="p-2 mb-5 container">
+        <div class="row d-flex justify-content-center"><br>
+            <h3 class="contianer-fluid py-2">Your Profile Details</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Email: {{ current_user.email }}</li>
+                <li class="list-group-item">Token: {{ current_user.token }} </li>
+                <li class="list-group-item">First Name: {{ current_user.first_name }} </li>
+                <li class="list-group-item">Last Name: {{ current_user.last_name }} </li>
+                <li class="list-group-item">Phone Number: {{ current_user.phone_number }} </li>
+                <li class="list-group-item">Address: {{ current_user.address }} </li>
+                <li class="list-group-item">{% include 'profileform.html' %}</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}
