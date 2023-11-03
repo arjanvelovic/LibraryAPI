@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="container-fluid px-0 mb-1 row">
+<main class="container-fluid px-0 m-0 mb-1">
 
-    <div class = "col-8 col-lg-3 border border-dark p-0 mx-2">
+<div class="row d-flex justify-content-center w-100 p-0 m-0 mb-4">
     {% for book in response %}
-    
-        <img class = "img-fluid" src = "{{ book.image }}"  alt="Image">
-        <div class="h4 text-center p-0">{{ book.title }}</div>
-    
-    {% endfor %}
+    <div class = "col-8 col-md-3 p-2 m-1 text-center my-2 h-75">
+        <img class = "img-fluid bookimage" src = "{{ book.image }}"  alt="Image">
+        <div class="h6 fw-bold">{{ book.title }} ({{ book.year }})</div>
+        <div class="h6">{{ book.author }}</div>
+        <div class="h6">ISBN: {{ book.isbn }}</div>
+        {% if book.hardcover %}
+            <div class="h6">Hardcover ${{ book.price }}</div>
+        {% else %}
+            <div class="h6">Paperback ${{ book.price }}</div>
+        {% endif %}
     </div>
+    {% endfor %}
+</div>
 
 </main>
 {% endblock %}
